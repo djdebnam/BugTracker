@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B67F9141-7C43-4406-81AA-6B097A21685B}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BugTracker</RootNamespace>
+    <AssemblyName>BugTracker</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets-minified\applications\mailbox.css" />
+    <Content Include="assets-minified\demo-widgets.css" />
+    <Content Include="assets-minified\demo-widgets.js" />
+    <Content Include="assets-minified\demo.css" />
+    <Content Include="assets-minified\dummy-images\350x300_1.jpg" />
+    <Content Include="assets-minified\dummy-images\350x300_2.jpg" />
+    <Content Include="assets-minified\dummy-images\350x300_3.jpg" />
+    <Content Include="assets-minified\dummy-images\350x300_4.jpg" />
+    <Content Include="assets-minified\dummy-images\350x300_5.jpg" />
+    <Content Include="assets-minified\dummy-images\350x300_6.jpg" />
+    <Content Include="assets-minified\dummy-images\350x300_7.jpg" />
+    <Content Include="assets-minified\dummy-images\3d-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\455293175_1280.jpg" />
+    <Content Include="assets-minified\dummy-images\a-l-1.png" />
+    <Content Include="assets-minified\dummy-images\a-l-2.png" />
+    <Content Include="assets-minified\dummy-images\a-l-3.png" />
+    <Content Include="assets-minified\dummy-images\a-l-4.png" />
+    <Content Include="assets-minified\dummy-images\a-l-5.png" />
+    <Content Include="assets-minified\dummy-images\a-l-6.png" />
+    <Content Include="assets-minified\dummy-images\a-l-7.png" />
+    <Content Include="assets-minified\dummy-images\abyss-bg-mask.png" />
+    <Content Include="assets-minified\dummy-images\abyss-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\acorn.png" />
+    <Content Include="assets-minified\dummy-images\arrow-up.png" />
+    <Content Include="assets-minified\dummy-images\autumn-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\bbb-bg-mask.png" />
+    <Content Include="assets-minified\dummy-images\bbb-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\bbb-clouds-close.png" />
+    <Content Include="assets-minified\dummy-images\bbb-clouds-far.png" />
+    <Content Include="assets-minified\dummy-images\bg-airbnb.jpg" />
+    <Content Include="assets-minified\dummy-images\bg-fishes-far.png" />
+    <Content Include="assets-minified\dummy-images\bg-fishes-mid.png" />
+    <Content Include="assets-minified\dummy-images\bg.jpg" />
+    <Content Include="assets-minified\dummy-images\bg1.jpg" />
+    <Content Include="assets-minified\dummy-images\bg2.jpg" />
+    <Content Include="assets-minified\dummy-images\bg21.jpg" />
+    <Content Include="assets-minified\dummy-images\bg3.jpg" />
+    <Content Include="assets-minified\dummy-images\bg31.jpg" />
+    <Content Include="assets-minified\dummy-images\bg4.jpg" />
+    <Content Include="assets-minified\dummy-images\bg41.jpg" />
+    <Content Include="assets-minified\dummy-images\bg5.jpg" />
+    <Content Include="assets-minified\dummy-images\bg51.jpg" />
+    <Content Include="assets-minified\dummy-images\bg6a.jpg" />
+    <Content Include="assets-minified\dummy-images\bg6b.jpg" />
+    <Content Include="assets-minified\dummy-images\bg7a.jpg" />
+    <Content Include="assets-minified\dummy-images\bg7b.jpg" />
+    <Content Include="assets-minified\dummy-images\bi-colored-butterfly-source_ijc.gif" />
+    <Content Include="assets-minified\dummy-images\big-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\big-cube.png" />
+    <Content Include="assets-minified\dummy-images\big-fish-close.png" />
+    <Content Include="assets-minified\dummy-images\bokeh.jpg" />
+    <Content Include="assets-minified\dummy-images\brench.png" />
+    <Content Include="assets-minified\dummy-images\circle.png" />
+    <Content Include="assets-minified\dummy-images\city\cyan_ferry.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_cityscape.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_cityscape2.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_crossing.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_firetruck.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_hydrant1.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_hydrant2.jpg" />
+    <Content Include="assets-minified\dummy-images\city\scottwills_nightlife.jpg" />
+    <Content Include="assets-minified\dummy-images\clownfish.png" />
+    <Content Include="assets-minified\dummy-images\computer.png" />
+    <Content Include="assets-minified\dummy-images\coral.jpg" />
+    <Content Include="assets-minified\dummy-images\cs1.jpg" />
+    <Content Include="assets-minified\dummy-images\cs2.jpg" />
+    <Content Include="assets-minified\dummy-images\cs3.jpg" />
+    <Content Include="assets-minified\dummy-images\cubes-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\cubes-blur.jpg" />
+    <Content Include="assets-minified\dummy-images\d1.png" />
+    <Content Include="assets-minified\dummy-images\d2.png" />
+    <Content Include="assets-minified\dummy-images\easy.png" />
+    <Content Include="assets-minified\dummy-images\feature-android.png" />
+    <Content Include="assets-minified\dummy-images\feature-html5.png" />
+    <Content Include="assets-minified\dummy-images\feature-ios.png" />
+    <Content Include="assets-minified\dummy-images\feature-layers.png" />
+    <Content Include="assets-minified\dummy-images\feature-mobile.png" />
+    <Content Include="assets-minified\dummy-images\feature-options.png" />
+    <Content Include="assets-minified\dummy-images\feature-performance.png" />
+    <Content Include="assets-minified\dummy-images\feature-responsive.png" />
+    <Content Include="assets-minified\dummy-images\feature-slideshow.png" />
+    <Content Include="assets-minified\dummy-images\feature-vimeo.png" />
+    <Content Include="assets-minified\dummy-images\feature-wordpress.png" />
+    <Content Include="assets-minified\dummy-images\feature-youtube.png" />
+    <Content Include="assets-minified\dummy-images\fish-showcase-1.png" />
+    <Content Include="assets-minified\dummy-images\fish-showcase-2.png" />
+    <Content Include="assets-minified\dummy-images\fish-showcase-3.png" />
+    <Content Include="assets-minified\dummy-images\fullscreen\1.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\2.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\3.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\4.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\5.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\6.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\7.jpg" />
+    <Content Include="assets-minified\dummy-images\fullscreen\high.gif" />
+    <Content Include="assets-minified\dummy-images\fullscreen\huge.gif" />
+    <Content Include="assets-minified\dummy-images\fullscreen\wide.gif" />
+    <Content Include="assets-minified\dummy-images\fw-1.jpg" />
+    <Content Include="assets-minified\dummy-images\gravatar.jpg" />
+    <Content Include="assets-minified\dummy-images\guitars.jpg" />
+    <Content Include="assets-minified\dummy-images\html5-color.png" />
+    <Content Include="assets-minified\dummy-images\image1.jpg" />
+    <Content Include="assets-minified\dummy-images\ipad_horizontal.png" />
+    <Content Include="assets-minified\dummy-images\iphone-screen.png" />
+    <Content Include="assets-minified\dummy-images\iphone_hand.png" />
+    <Content Include="assets-minified\dummy-images\jellyfish-blur.jpg" />
+    <Content Include="assets-minified\dummy-images\jellyfish.png" />
+    <Content Include="assets-minified\dummy-images\l1.png" />
+    <Content Include="assets-minified\dummy-images\l2.png" />
+    <Content Include="assets-minified\dummy-images\l3.png" />
+    <Content Include="assets-minified\dummy-images\ladybug.png" />
+    <Content Include="assets-minified\dummy-images\layerslider-on-cellphone.png" />
+    <Content Include="assets-minified\dummy-images\layerslider-on-computer.png" />
+    <Content Include="assets-minified\dummy-images\layerslider-on-tablet.png" />
+    <Content Include="assets-minified\dummy-images\left.png" />
+    <Content Include="assets-minified\dummy-images\ls5box.png" />
+    <Content Include="assets-minified\dummy-images\med-fish-close.png" />
+    <Content Include="assets-minified\dummy-images\med-fish-mid.png" />
+    <Content Include="assets-minified\dummy-images\mid-cube-blur.png" />
+    <Content Include="assets-minified\dummy-images\mouse.png" />
+    <Content Include="assets-minified\dummy-images\people\testimonial1.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial2.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial3.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial4.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial5.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial6.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial7.jpg" />
+    <Content Include="assets-minified\dummy-images\people\testimonial8.jpg" />
+    <Content Include="assets-minified\dummy-images\phone.png" />
+    <Content Include="assets-minified\dummy-images\poly\black.jpg" />
+    <Content Include="assets-minified\dummy-images\poly\blue.jpg" />
+    <Content Include="assets-minified\dummy-images\poly\gray.jpg" />
+    <Content Include="assets-minified\dummy-images\poly\green.jpg" />
+    <Content Include="assets-minified\dummy-images\poly\orange.jpg" />
+    <Content Include="assets-minified\dummy-images\right.png" />
+    <Content Include="assets-minified\dummy-images\s-l-1.png" />
+    <Content Include="assets-minified\dummy-images\s-l-2.png" />
+    <Content Include="assets-minified\dummy-images\s-l-3.png" />
+    <Content Include="assets-minified\dummy-images\s-l-4.png" />
+    <Content Include="assets-minified\dummy-images\s-l-5.png" />
+    <Content Include="assets-minified\dummy-images\s-l-6.png" />
+    <Content Include="assets-minified\dummy-images\s-l-7.png" />
+    <Content Include="assets-minified\dummy-images\s1.jpg" />
+    <Content Include="assets-minified\dummy-images\s1.png" />
+    <Content Include="assets-minified\dummy-images\s2.jpg" />
+    <Content Include="assets-minified\dummy-images\s2.png" />
+    <Content Include="assets-minified\dummy-images\sample_sliders.txt" />
+    <Content Include="assets-minified\dummy-images\sample_transitions.js" />
+    <Content Include="assets-minified\dummy-images\sayhello.png" />
+    <Content Include="assets-minified\dummy-images\shark.png" />
+    <Content Include="assets-minified\dummy-images\slide-a-1.png" />
+    <Content Include="assets-minified\dummy-images\slide-a-2.png" />
+    <Content Include="assets-minified\dummy-images\slide-a-3.png" />
+    <Content Include="assets-minified\dummy-images\slide-a-4.png" />
+    <Content Include="assets-minified\dummy-images\slide-a-5.png" />
+    <Content Include="assets-minified\dummy-images\slide-a-6.png" />
+    <Content Include="assets-minified\dummy-images\slide-b-1.png" />
+    <Content Include="assets-minified\dummy-images\slide-b-2.png" />
+    <Content Include="assets-minified\dummy-images\slide-b-3.png" />
+    <Content Include="assets-minified\dummy-images\slide-b-4.png" />
+    <Content Include="assets-minified\dummy-images\slide-b-5.png" />
+    <Content Include="assets-minified\dummy-images\slide-b-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\slide-d-5-1.png" />
+    <Content Include="assets-minified\dummy-images\slide-d-5-2.png" />
+    <Content Include="assets-minified\dummy-images\slide-d-5-3.png" />
+    <Content Include="assets-minified\dummy-images\slide-d-5-4.png" />
+    <Content Include="assets-minified\dummy-images\slide-d-5-5.png" />
+    <Content Include="assets-minified\dummy-images\slide-d-5-6.png" />
+    <Content Include="assets-minified\dummy-images\small-cube-blur.png" />
+    <Content Include="assets-minified\dummy-images\small-cube.png" />
+    <Content Include="assets-minified\dummy-images\small-fish-close.png" />
+    <Content Include="assets-minified\dummy-images\small-fish-far.png" />
+    <Content Include="assets-minified\dummy-images\small-fish-mid.png" />
+    <Content Include="assets-minified\dummy-images\small1.jpg" />
+    <Content Include="assets-minified\dummy-images\summer-bg.jpg" />
+    <Content Include="assets-minified\dummy-images\tablet.png" />
+    <Content Include="assets-minified\dummy-images\thumbnails\t_1.jpg" />
+    <Content Include="assets-minified\dummy-images\thumbnails\t_2.jpg" />
+    <Content Include="assets-minified\dummy-images\thumbnails\t_3.jpg" />
+    <Content Include="assets-minified\dummy-images\thumbnails\t_4.jpg" />
+    <Content Include="assets-minified\dummy-images\thumbnails\t_5.jpg" />
+    <Content Include="assets-minified\dummy-images\tile-1.png" />
+    <Content Include="assets-minified\dummy-images\tile-2.png" />
+    <Content Include="assets-minified\dummy-images\tile-3.png" />
+    <Content Include="assets-minified\dummy-images\tile-4.png" />
+    <Content Include="assets-minified\dummy-images\tile-5.png" />
+    <Content Include="assets-minified\dummy-images\tile-6.png" />
+    <Content Include="assets-minified\dummy-images\tile-7.png" />
+    <Content Include="assets-minified\dummy-images\tile-8.png" />
+    <Content Include="assets-minified\dummy-images\tile-9.png" />
+    <Content Include="assets-minified\dummy-images\tucan.png" />
+    <Content Include="assets-minified\dummy-images\vfeatures.png" />
+    <Content Include="assets-minified\dummy-images\video\big-buck-bunny.jpg" />
+    <Content Include="assets-minified\dummy-images\video\big-buck-bunny.mp4" />
+    <Content Include="assets-minified\dummy-images\vimeo-color.png" />
+    <Content Include="assets-minified\dummy-images\youtube-color.png" />
+    <Content Include="assets-minified\elements\badges.css" />
+    <Content Include="assets-minified\elements\breadcrumb.css" />
+    <Content Include="assets-minified\elements\buttons.css" />
+    <Content Include="assets-minified\elements\content-box.css" />
+    <Content Include="assets-minified\elements\dashboard-box.css" />
+    <Content Include="assets-minified\elements\elements-all.css" />
+    <Content Include="assets-minified\elements\forms.css" />
+    <Content Include="assets-minified\elements\images.css" />
+    <Content Include="assets-minified\elements\info-box.css" />
+    <Content Include="assets-minified\elements\loading-indicators.css" />
+    <Content Include="assets-minified\elements\menus.css" />
+    <Content Include="assets-minified\elements\panel-box.css" />
+    <Content Include="assets-minified\elements\progress-bar.css" />
+    <Content Include="assets-minified\elements\response-messages.css" />
+    <Content Include="assets-minified\elements\ribbon.css" />
+    <Content Include="assets-minified\elements\social-box.css" />
+    <Content Include="assets-minified\elements\tables.css" />
+    <Content Include="assets-minified\elements\tile-box.css" />
+    <Content Include="assets-minified\elements\timeline.css" />
+    <Content Include="assets-minified\frontend-elements\cta-box.css" />
+    <Content Include="assets-minified\frontend-elements\feature-box.css" />
+    <Content Include="assets-minified\frontend-elements\footer.css" />
+    <Content Include="assets-minified\frontend-elements\frontend-elements-all.css" />
+    <Content Include="assets-minified\frontend-elements\frontend-responsive.css" />
+    <Content Include="assets-minified\frontend-elements\icon-box.css" />
+    <Content Include="assets-minified\frontend-elements\portfolio-navigation.css" />
+    <Content Include="assets-minified\frontend-elements\pricing-table.css" />
+    <Content Include="assets-minified\frontend-elements\sliders.css" />
+    <Content Include="assets-minified\frontend-elements\testimonial-box.css" />
+    <Content Include="assets-minified\frontend-elements\title-box.css" />
+    <Content Include="assets-minified\helpers\animate.css" />
+    <Content Include="assets-minified\helpers\backgrounds.css" />
+    <Content Include="assets-minified\helpers\boilerplate.css" />
+    <Content Include="assets-minified\helpers\border-radius.css" />
+    <Content Include="assets-minified\helpers\colors.css" />
+    <Content Include="assets-minified\helpers\grid.css" />
+    <Content Include="assets-minified\helpers\helpers-all.css" />
+    <Content Include="assets-minified\helpers\page-transitions.css" />
+    <Content Include="assets-minified\helpers\responsive-elements.css" />
+    <Content Include="assets-minified\helpers\responsive.css" />
+    <Content Include="assets-minified\helpers\spacing.css" />
+    <Content Include="assets-minified\helpers\typography.css" />
+    <Content Include="assets-minified\helpers\utils.css" />
+    <Content Include="assets-minified\icons\elusive\elusive.css" />
+    <Content Include="assets-minified\icons\elusive\elusive.svg" />
+    <Content Include="assets-minified\icons\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="assets-minified\icons\fontawesome\fontawesome.css" />
+    <Content Include="assets-minified\icons\iconic\iconic.css" />
+    <Content Include="assets-minified\icons\iconic\iconic.svg" />
+    <Content Include="assets-minified\icons\linecons\linecons.css" />
+    <Content Include="assets-minified\icons\linecons\linecons.svg" />
+    <Content Include="assets-minified\icons\meteocons\meteocons.css" />
+    <Content Include="assets-minified\icons\meteocons\meteocons.svg" />
+    <Content Include="assets-minified\icons\spinnericon\spinnericon.css" />
+    <Content Include="assets-minified\icons\spinnericon\spinnericon.svg" />
+    <Content Include="assets-minified\icons\typicons\typicons.css" />
+    <Content Include="assets-minified\icons\typicons\typicons.svg" />
+    <Content Include="assets-minified\images\animated-overlay.gif" />
+    <Content Include="assets-minified\images\blank.gif" />
+    <Content Include="assets-minified\images\colorpicker.png" />
+    <Content Include="assets-minified\images\grabbing.png" />
+    <Content Include="assets-minified\images\icons\apple-touch-icon-114-precomposed.png" />
+    <Content Include="assets-minified\images\icons\apple-touch-icon-144-precomposed.png" />
+    <Content Include="assets-minified\images\icons\apple-touch-icon-57-precomposed.png" />
+    <Content Include="assets-minified\images\icons\apple-touch-icon-72-precomposed.png" />
+    <Content Include="assets-minified\images\icons\favicon.png" />
+    <Content Include="assets-minified\images\jcrop.gif" />
+    <Content Include="assets-minified\images\login-bg.png" />
+    <Content Include="assets-minified\images\spinner\loader-dark.gif" />
+    <Content Include="assets-minified\images\spinner\loader-light.gif" />
+    <Content Include="assets-minified\js-core.js" />
+    <Content Include="assets-minified\js-core\d3.js" />
+    <Content Include="assets-minified\js-core\greensock.js" />
+    <Content Include="assets-minified\js-core\jquery-cookie.js" />
+    <Content Include="assets-minified\js-core\jquery-core.js" />
+    <Content Include="assets-minified\js-core\jquery-ui-core.js" />
+    <Content Include="assets-minified\js-core\jquery-ui-mouse.js" />
+    <Content Include="assets-minified\js-core\jquery-ui-position.js" />
+    <Content Include="assets-minified\js-core\jquery-ui-touch-punch.js" />
+    <Content Include="assets-minified\js-core\jquery-ui-widget.js" />
+    <Content Include="assets-minified\js-core\modernizr.js" />
+    <Content Include="assets-minified\js-core\raphael.js" />
+    <Content Include="assets-minified\js-core\transition.js" />
+    <Content Include="assets-minified\snippets\chat-box.css" />
+    <Content Include="assets-minified\snippets\chat.css" />
+    <Content Include="assets-minified\snippets\files-box.css" />
+    <Content Include="assets-minified\snippets\login-box.css" />
+    <Content Include="assets-minified\snippets\notification-box.css" />
+    <Content Include="assets-minified\snippets\progress-box.css" />
+    <Content Include="assets-minified\snippets\snippets-all.css" />
+    <Content Include="assets-minified\snippets\theme-switcher.css" />
+    <Content Include="assets-minified\snippets\todo.css" />
+    <Content Include="assets-minified\snippets\user-profile.css" />
+    <Content Include="assets-minified\themes\supina\blue\framework-color.css" />
+    <Content Include="assets-minified\themes\supina\border-radius.css" />
+    <Content Include="assets-minified\themes\supina\default\framework-color.css" />
+    <Content Include="assets-minified\themes\supina\default\layout-color.css" />
+    <Content Include="assets-minified\themes\supina\frontend\color.css" />
+    <Content Include="assets-minified\themes\supina\frontend\js\frontend-init.js" />
+    <Content Include="assets-minified\themes\supina\green\framework-color.css" />
+    <Content Include="assets-minified\themes\supina\js\layout.js" />
+    <Content Include="assets-minified\themes\supina\layout.css" />
+    <Content Include="assets-minified\themes\supina\light\layout-color.css" />
+    <Content Include="assets-minified\widgets-init.js" />
+    <Content Include="assets-minified\widgets\accordion-ui\accordion.css" />
+    <Content Include="assets-minified\widgets\accordion-ui\accordion.js" />
+    <Content Include="assets-minified\widgets\animation\animation.js" />
+    <Content Include="assets-minified\widgets\autocomplete\autocomplete.js" />
+    <Content Include="assets-minified\widgets\autocomplete\menu.js" />
+    <Content Include="assets-minified\widgets\button-ui\button.js" />
+    <Content Include="assets-minified\widgets\button\button.js" />
+    <Content Include="assets-minified\widgets\calendar\calendar-demo.js" />
+    <Content Include="assets-minified\widgets\calendar\calendar.css" />
+    <Content Include="assets-minified\widgets\calendar\calendar.js" />
+    <Content Include="assets-minified\widgets\carousel\carousel.css" />
+    <Content Include="assets-minified\widgets\carousel\carousel.js" />
+    <Content Include="assets-minified\widgets\charts\justgage\justgage-demo.js" />
+    <Content Include="assets-minified\widgets\charts\justgage\justgage.css" />
+    <Content Include="assets-minified\widgets\charts\justgage\justgage.js" />
+    <Content Include="assets-minified\widgets\charts\morris\morris-demo.js" />
+    <Content Include="assets-minified\widgets\charts\morris\morris.css" />
+    <Content Include="assets-minified\widgets\charts\morris\morris.js" />
+    <Content Include="assets-minified\widgets\charts\piegage\piegage-demo.js" />
+    <Content Include="assets-minified\widgets\charts\piegage\piegage.css" />
+    <Content Include="assets-minified\widgets\charts\piegage\piegage.js" />
+    <Content Include="assets-minified\widgets\charts\sparklines\sparklines-demo.js" />
+    <Content Include="assets-minified\widgets\charts\sparklines\sparklines.js" />
+    <Content Include="assets-minified\widgets\charts\xcharts\xcharts-demo.js" />
+    <Content Include="assets-minified\widgets\charts\xcharts\xcharts.css" />
+    <Content Include="assets-minified\widgets\charts\xcharts\xcharts.js" />
+    <Content Include="assets-minified\widgets\chosen\chosen.css" />
+    <Content Include="assets-minified\widgets\chosen\chosen.js" />
+    <Content Include="assets-minified\widgets\collapse\collapse.js" />
+    <Content Include="assets-minified\widgets\colorpicker\colorpicker-demo.js" />
+    <Content Include="assets-minified\widgets\colorpicker\colorpicker.css" />
+    <Content Include="assets-minified\widgets\colorpicker\colorpicker.js" />
+    <Content Include="assets-minified\widgets\content-box\contentbox.js" />
+    <Content Include="assets-minified\widgets\datatable\datatable-bootstrap.js" />
+    <Content Include="assets-minified\widgets\datatable\datatable.css" />
+    <Content Include="assets-minified\widgets\datatable\datatable.js" />
+    <Content Include="assets-minified\widgets\datepicker-ui\datepicker-demo.js" />
+    <Content Include="assets-minified\widgets\datepicker-ui\datepicker.css" />
+    <Content Include="assets-minified\widgets\datepicker-ui\datepicker.js" />
+    <Content Include="assets-minified\widgets\datepicker\datepicker.css" />
+    <Content Include="assets-minified\widgets\datepicker\datepicker.js" />
+    <Content Include="assets-minified\widgets\daterangepicker\daterangepicker-demo.js" />
+    <Content Include="assets-minified\widgets\daterangepicker\daterangepicker.css" />
+    <Content Include="assets-minified\widgets\daterangepicker\daterangepicker.js" />
+    <Content Include="assets-minified\widgets\daterangepicker\moment.js" />
+    <Content Include="assets-minified\widgets\dialog\dialog-demo.js" />
+    <Content Include="assets-minified\widgets\dialog\dialog.css" />
+    <Content Include="assets-minified\widgets\dialog\dialog.js" />
+    <Content Include="assets-minified\widgets\dropdown\dropdown.css" />
+    <Content Include="assets-minified\widgets\dropdown\dropdown.js" />
+    <Content Include="assets-minified\widgets\dropzone\dropzone.css" />
+    <Content Include="assets-minified\widgets\dropzone\dropzone.js" />
+    <Content Include="assets-minified\widgets\input-mask\inputmask.js" />
+    <Content Include="assets-minified\widgets\input-switch\inputswitch.css" />
+    <Content Include="assets-minified\widgets\input-switch\inputswitch.js" />
+    <Content Include="assets-minified\widgets\interactions-ui\draggable.js" />
+    <Content Include="assets-minified\widgets\interactions-ui\droppable.js" />
+    <Content Include="assets-minified\widgets\interactions-ui\resizable.js" />
+    <Content Include="assets-minified\widgets\interactions-ui\selectable.js" />
+    <Content Include="assets-minified\widgets\interactions-ui\sortable.js" />
+    <Content Include="assets-minified\widgets\jcrop\jcrop-demo.js" />
+    <Content Include="assets-minified\widgets\jcrop\jcrop.css" />
+    <Content Include="assets-minified\widgets\jcrop\jcrop.js" />
+    <Content Include="assets-minified\widgets\jgrowl-notifications\jgrowl-demo.js" />
+    <Content Include="assets-minified\widgets\jgrowl-notifications\jgrowl.css" />
+    <Content Include="assets-minified\widgets\jgrowl-notifications\jgrowl.js" />
+    <Content Include="assets-minified\widgets\knobs\knob.js" />
+    <Content Include="assets-minified\widgets\layerslider\layerslider-demo.js" />
+    <Content Include="assets-minified\widgets\layerslider\layerslider-transitions.js" />
+    <Content Include="assets-minified\widgets\layerslider\layerslider.css" />
+    <Content Include="assets-minified\widgets\layerslider\layerslider.js" />
+    <Content Include="assets-minified\widgets\layerslider\skins\borderlessdark3d\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\borderlessdark\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\borderlesslight3d\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\borderlesslight\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\carousel\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\darkskin\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\defaultskin\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\fullwidthdark\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\fullwidth\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\glass\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\lightskin\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\minimal\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\noskin\skin.css" />
+    <Content Include="assets-minified\widgets\layerslider\skins\v5\skin.css" />
+    <Content Include="assets-minified\widgets\lazyload\lazyload.js" />
+    <Content Include="assets-minified\widgets\loading-bar\loadingbar-demo.js" />
+    <Content Include="assets-minified\widgets\loading-bar\loadingbar.css" />
+    <Content Include="assets-minified\widgets\loading-bar\loadingbar.js" />
+    <Content Include="assets-minified\widgets\loading-indicator\spinner-icon\fontello.css" />
+    <Content Include="assets-minified\widgets\maps\gmaps\gmaps-demo.js" />
+    <Content Include="assets-minified\widgets\maps\gmaps\gmaps.js" />
+    <Content Include="assets-minified\widgets\maps\vector-maps\de_merc_en.js" />
+    <Content Include="assets-minified\widgets\maps\vector-maps\mall_map.js" />
+    <Content Include="assets-minified\widgets\maps\vector-maps\vectormaps-demo.js" />
+    <Content Include="assets-minified\widgets\maps\vector-maps\vectormaps.css" />
+    <Content Include="assets-minified\widgets\maps\vector-maps\vectormaps.js" />
+    <Content Include="assets-minified\widgets\maps\vector-maps\world_map.js" />
+    <Content Include="assets-minified\widgets\menu-ui\menu.js" />
+    <Content Include="assets-minified\widgets\mixitup\isotope.js" />
+    <Content Include="assets-minified\widgets\mixitup\mixitup.js" />
+    <Content Include="assets-minified\widgets\mixitup\portfolio-demo.js" />
+    <Content Include="assets-minified\widgets\modal\modal.css" />
+    <Content Include="assets-minified\widgets\modal\modal.js" />
+    <Content Include="assets-minified\widgets\multi-select\multiselect.css" />
+    <Content Include="assets-minified\widgets\multi-select\multiselect.js" />
+    <Content Include="assets-minified\widgets\multi-upload\app.js" />
+    <Content Include="assets-minified\widgets\multi-upload\cors\jquery.postmessage-transport.js" />
+    <Content Include="assets-minified\widgets\multi-upload\cors\jquery.xdr-transport.js" />
+    <Content Include="assets-minified\widgets\multi-upload\fileupload.css" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-angular.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-audio.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-image.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-jquery-ui.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-process.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-ui.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-validate.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload-video.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.fileupload.js" />
+    <Content Include="assets-minified\widgets\multi-upload\jquery.iframe-transport.js" />
+    <Content Include="assets-minified\widgets\multi-upload\main.js" />
+    <Content Include="assets-minified\widgets\nestable\nestable-demo.js" />
+    <Content Include="assets-minified\widgets\nestable\nestable.css" />
+    <Content Include="assets-minified\widgets\nestable\nestable.js" />
+    <Content Include="assets-minified\widgets\nicescroll\nicescroll.js" />
+    <Content Include="assets-minified\widgets\noty-notifications\noty-demo.js" />
+    <Content Include="assets-minified\widgets\noty-notifications\noty.css" />
+    <Content Include="assets-minified\widgets\noty-notifications\noty.js" />
+    <Content Include="assets-minified\widgets\overlay\overlay.js" />
+    <Content Include="assets-minified\widgets\owlcarousel\owlcarousel-demo.js" />
+    <Content Include="assets-minified\widgets\owlcarousel\owlcarousel.css" />
+    <Content Include="assets-minified\widgets\owlcarousel\owlcarousel.js" />
+    <Content Include="assets-minified\widgets\parsley\parsley.js" />
+    <Content Include="assets-minified\widgets\popover\popover.css" />
+    <Content Include="assets-minified\widgets\popover\popover.js" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\default_thumb.png" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\loader.gif" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\sprite.png" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\sprite_next.png" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\sprite_prev.png" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\sprite_x.png" />
+    <Content Include="assets-minified\widgets\pretty-photo\images\default\sprite_y.png" />
+    <Content Include="assets-minified\widgets\pretty-photo\prettyphoto.css" />
+    <Content Include="assets-minified\widgets\pretty-photo\prettyphoto.js" />
+    <Content Include="assets-minified\widgets\prism\prism.css" />
+    <Content Include="assets-minified\widgets\prism\prism.js" />
+    <Content Include="assets-minified\widgets\progressbar-ui\progressbar.css" />
+    <Content Include="assets-minified\widgets\progressbar-ui\progressbar.js" />
+    <Content Include="assets-minified\widgets\progressbar\progressbar.css" />
+    <Content Include="assets-minified\widgets\progressbar\progressbar.js" />
+    <Content Include="assets-minified\widgets\range-slider\rangeslider-core.js" />
+    <Content Include="assets-minified\widgets\range-slider\rangeslider-demo.js" />
+    <Content Include="assets-minified\widgets\range-slider\rangeslider.css" />
+    <Content Include="assets-minified\widgets\skrollr\skrollr.js" />
+    <Content Include="assets-minified\widgets\skycons\skycons.js" />
+    <Content Include="assets-minified\widgets\slidebars\slidebars.css" />
+    <Content Include="assets-minified\widgets\slidebars\slidebars.js" />
+    <Content Include="assets-minified\widgets\slider-ui\slider-demo.js" />
+    <Content Include="assets-minified\widgets\slider-ui\slider.css" />
+    <Content Include="assets-minified\widgets\slider-ui\slider.js" />
+    <Content Include="assets-minified\widgets\spinner\spinner.js" />
+    <Content Include="assets-minified\widgets\sticky\sticky.js" />
+    <Content Include="assets-minified\widgets\summernote-wysiwyg\summernote-wysiwyg.css" />
+    <Content Include="assets-minified\widgets\summernote-wysiwyg\summernote-wysiwyg.js" />
+    <Content Include="assets-minified\widgets\superclick\superclick.js" />
+    <Content Include="assets-minified\widgets\superfish\superfish.js" />
+    <Content Include="assets-minified\widgets\tabs-ui\tabs.css" />
+    <Content Include="assets-minified\widgets\tabs-ui\tabs.js" />
+    <Content Include="assets-minified\widgets\tabs\tabs.js" />
+    <Content Include="assets-minified\widgets\textarea\textarea.js" />
+    <Content Include="assets-minified\widgets\timepicker\timepicker.css" />
+    <Content Include="assets-minified\widgets\timepicker\timepicker.js" />
+    <Content Include="assets-minified\widgets\tooltip\tooltip.css" />
+    <Content Include="assets-minified\widgets\tooltip\tooltip.js" />
+    <Content Include="assets-minified\widgets\uniform\uniform.css" />
+    <Content Include="assets-minified\widgets\uniform\uniform.js" />
+    <Content Include="assets-minified\widgets\videobg\videobg-demo.js" />
+    <Content Include="assets-minified\widgets\videobg\videobg.js" />
+    <Content Include="assets-minified\widgets\wizard\wizard-demo.js" />
+    <Content Include="assets-minified\widgets\wizard\wizard.css" />
+    <Content Include="assets-minified\widgets\wizard\wizard.js" />
+    <Content Include="assets-minified\widgets\wow\wow.js" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.5-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\npm.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="assets-minified\dummy-images\video\big-buck-bunny.ogv" />
+    <Content Include="assets-minified\dummy-images\video\big-buck-bunny.webm" />
+    <Content Include="assets-minified\icons\elusive\elusive.eot" />
+    <Content Include="assets-minified\icons\elusive\elusive.ttf" />
+    <Content Include="assets-minified\icons\elusive\elusive.woff" />
+    <Content Include="assets-minified\icons\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="assets-minified\icons\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="assets-minified\icons\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="assets-minified\icons\fontawesome\FontAwesome.otf" />
+    <Content Include="assets-minified\icons\iconic\iconic.eot" />
+    <Content Include="assets-minified\icons\iconic\iconic.ttf" />
+    <Content Include="assets-minified\icons\iconic\iconic.woff" />
+    <Content Include="assets-minified\icons\linecons\linecons.eot" />
+    <Content Include="assets-minified\icons\linecons\linecons.ttf" />
+    <Content Include="assets-minified\icons\linecons\linecons.woff" />
+    <Content Include="assets-minified\icons\meteocons\meteocons.eot" />
+    <Content Include="assets-minified\icons\meteocons\meteocons.ttf" />
+    <Content Include="assets-minified\icons\meteocons\meteocons.woff" />
+    <Content Include="assets-minified\icons\spinnericon\spinnericon.eot" />
+    <Content Include="assets-minified\icons\spinnericon\spinnericon.ttf" />
+    <Content Include="assets-minified\icons\spinnericon\spinnericon.woff" />
+    <Content Include="assets-minified\icons\typicons\typicons.eot" />
+    <Content Include="assets-minified\icons\typicons\typicons.ttf" />
+    <Content Include="assets-minified\icons\typicons\typicons.woff" />
+    <Content Include="assets-minified\images\icons\icons.psd" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63493</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63493/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

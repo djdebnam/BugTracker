@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @* Bootstrap *@
+        <link href="~/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+        @* Elements *@
+        <link href="~/assets-minified/elements/badges.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/breadcrumb.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/buttons.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/content-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/dashboard-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/elements-all.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/forms.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/images.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/info-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/loading-indicators.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/menus.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/panel-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/progress-bar.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/response-messages.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/ribbon.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/social-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/tables.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/tile-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/elements/timeline.css" rel="stylesheet" />
+        @* Frontend Elements *@
+        <link href="~/assets-minified/frontend-elements/cta-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/feature-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/footer.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/frontend-elements-all.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/frontend-responsive.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/icon-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/portfolio-navigation.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/pricing-table.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/sliders.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/testimonial-box.css" rel="stylesheet" />
+        <link href="~/assets-minified/frontend-elements/title-box.css" rel="stylesheet" />
+        @* Helpers *@
+        <link href="~/assets-minified/helpers/animate.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/backgrounds.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/boilerplate.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/border-radius.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/colors.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/grid.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/helpers-all.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/page-transitions.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/responsive-elements.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/responsive.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/spacing.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/typography.css" rel="stylesheet" />
+        <link href="~/assets-minified/helpers/utils.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        <script src="~/assets-minified/js-core/d3.js"></script>
+        <script src="~/assets-minified/js-core/greensock.js"></script>
+        <script src="~/assets-minified/js-core/modernizr.js"></script>
+        <script src="~/assets-minified/js-core/raphael.js"></script>
+        <script src="~/assets-minified/js-core/transition.js"></script>
+        
+    </body>
+</html>
